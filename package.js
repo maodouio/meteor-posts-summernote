@@ -20,7 +20,7 @@ Package.onUse(function(api) {
   api.use('aldeed:simple-schema@1.3.2', ["server", "client"]);
   api.use('matb33:collection-hooks@0.8.0', ["server", "client"]);
   api.use('mpowaga:autoform-summernote@0.4.2', ['client']);
-  //api.use('twbs:bootstrap@3.3.4', ["server", "client"]);
+  api.use('twbs:bootstrap@3.3.4', ["server", "client"]);
 
   // mongo and template
   // https://zh.discovermeteor.com/chapters/creating-a-meteor-package/

@@ -2,7 +2,7 @@
   <h2>Create post</h2>
   {{#autoForm collection="Posts" id="postForm" type="insert"}}
   <fieldset>
-    {{> afQuickField name='title'}} {{> afQuickField name='content' rows=6}}
+    {{> afQuickField name='title'}} {{> afQuickField name='content' height='100'}}
   </fieldset>
   <button type="submit" class="btn btn-primary">Create</button>
   <a class="btn btn-link" role="button" href="{{pathFor 'postsIndex'}}">Back</a> {{/autoForm}}

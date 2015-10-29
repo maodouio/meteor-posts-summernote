@@ -7,8 +7,8 @@
         <thead>
           <tr>
             <th>Title</th>
-            <th>Content</th>
-            <th>Updated</th>
+            <!-- <th>Content</th> -->
+            <!-- <th>Updated</th> -->
             <th>Created</th>
             <th>Actions</th>
           </tr>
@@ -17,8 +17,8 @@
           {{#each posts}}
           <tr>
             <td><a href="{{pathFor 'postShow'}}">{{title}}</a></td>
-            <td>{{content}}</td>
-            <td>{{showTimeAgo updatedAt}}</td>
+            <!-- <td>{{content}}</td> -->
+            <!-- <td>{{showTimeAgo updatedAt}}</td> -->
             <td>{{showPrettyTimestamp createdAt}}</td>
             <td>
               <a class="btn btn-xs btn-default" href="{{pathFor 'postEdit'}}" role="button">Edit</a>
