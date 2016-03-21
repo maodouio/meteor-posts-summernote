@@ -1,5 +1,8 @@
 <template name="postShow">
-  <h2>{{title}}</h2>
-  <p>{{{content}}}</p>
-  <a href="{{pathFor 'postsIndex'}}">Back</a>
+  <div class="container">
+    <h2 class="text-left">{{title}}</h2>
+    <h4>{{showPrettyTimestamp createdAt}}</h4>
+    <p>{{{content}}}</p>
+    <a href="{{pathFor 'postsIndex'}}">Back</a>
+  </div>
 </template>

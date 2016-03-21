@@ -14,6 +14,12 @@ Package.onUse(function(api) {
   // version
   // api.versionsFrom('1.2.0.2');
   // package
+
+  //Failed in here!  api.use('jquery@1.11.4', ["server", "client"]);
+  //Failed in here!  api.use('tracker@1.0.9', ["server", "client"]);
+  api.use('momentjs:moment@2.12.0', ["server", "client"]);
+  api.use('natestrauser:font-awesome@4.5.0', ["server", "client"]);
+
   api.use('iron:router@1.0.12', ["server", "client"]);
   api.use('aldeed:autoform@5.1.2', ["server", "client"]);
   api.use('aldeed:collection2@2.3.3', ["server", "client"]);

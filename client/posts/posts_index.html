@@ -1,35 +1,37 @@
 <template name="postsIndex">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>文章列表</h1>
-      <a class="btn btn-primary" href="{{pathFor 'postNew'}}" role="button">发表文章</a>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <!-- <th>Content</th> -->
-            <!-- <th>Updated</th> -->
-            <th>Created</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each posts}}
-          <tr>
-            <td><a href="{{pathFor 'postShow'}}">{{title}}</a></td>
-            <!-- <td>{{content}}</td> -->
-            <!-- <td>{{showTimeAgo updatedAt}}</td> -->
-            <td>{{showPrettyTimestamp createdAt}}</td>
-            <td>
-              <a class="btn btn-xs btn-default" href="{{pathFor 'postEdit'}}" role="button">Edit</a>
-              <a class="btn btn-xs btn-danger delete-post" href="#" role="button">Delete</a>
-              </td>
-          </tr>
-          {{else}}
-          No posts
-          {{/each}}
-        </tbody>
-      </table>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>文章列表</h1>
+        <a class="btn btn-primary" href="{{pathFor 'postNew'}}" role="button">发表文章</a>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <!-- <th>Content</th> -->
+              <!-- <th>Updated</th> -->
+              <th>Created</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each posts}}
+            <tr>
+              <td><a href="{{pathFor 'postShow'}}">{{title}}</a></td>
+              <!-- <td>{{content}}</td> -->
+              <!-- <td>{{showTimeAgo updatedAt}}</td> -->
+              <td>{{showPrettyTimestamp createdAt}}</td>
+              <td>
+                <a class="btn btn-xs btn-default" href="{{pathFor 'postEdit'}}" role="button">Edit</a>
+                <a class="btn btn-xs btn-danger delete-post" href="#" role="button">Delete</a>
+                </td>
+            </tr>
+            {{else}}
+            No posts
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
