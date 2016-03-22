@@ -1,11 +1,13 @@
 <template name="postEdit">
-  <h2>Edit post</h2>
-  {{#autoForm collection="Posts" doc=this id="postForm" type="update"}}
-    <fieldset>
-      {{> afQuickField name='title'}}
-      {{> afQuickField name='content' rows=6}}
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Update</button>
-    <a class="btn btn-link" role="button" href="{{pathFor 'postsIndex'}}">Back</a>
-  {{/autoForm}}
+  <div class="container">
+    <h2>Edit post</h2>
+    {{#autoForm collection="Posts" doc=this id="postForm" type="update"}}
+      <fieldset>
+        {{> afQuickField name='title'}}
+        {{> afQuickField name='content' rows=6}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Update</button>
+      <a class="btn btn-link" role="button" href="{{pathFor 'postsIndex'}}">Back</a>
+    {{/autoForm}}
+  </div>
 </template>
