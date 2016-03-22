@@ -4,6 +4,9 @@ Template.postShow.rendered = function() {
 };
 
 Template.postShow.helpers({
+  photo: function() {
+    return Session.get("logoImage");
+  },
 });
 
 Template.postShow.events ({

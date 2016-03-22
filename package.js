@@ -27,6 +27,8 @@ Package.onUse(function(api) {
   api.use('matb33:collection-hooks@0.8.0', ["server", "client"]);
   api.use('mpowaga:autoform-summernote@0.4.2', ['client']);
   api.use('twbs:bootstrap@3.3.4', ["server", "client"]);
+  api.use('maodouio:meteor-image-upload@0.0.1', ["server", "client"]);
+
 
   // mongo and template
   // https://zh.discovermeteor.com/chapters/creating-a-meteor-package/
@@ -42,7 +44,7 @@ Package.onUse(function(api) {
   api.addFiles("client/posts/post_new.js", "client");
   api.addFiles("client/posts/post_show.html", "client");
   api.addFiles("client/posts/post_show.js", "client");
-  api.addFiles("client/posts/posts.html", "client");
+  // api.addFiles("client/posts/posts.html", "client");
   api.addFiles("client/posts/posts_index.html", "client");
   api.addFiles("client/posts/posts_index.js", "client");
 

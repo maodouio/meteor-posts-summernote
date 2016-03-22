@@ -2,10 +2,22 @@ Template.postNew.rendered = function() {
   $('.note-editable').css("min-height", "200px");
 };
 
+Template.postNew.onRendered(function(){
+  console.log('logoImages: ' + Session.get('logoImages'));
+  Session.setDefault("imageFileName","未选择文件");
+  Session.setDefault("logoImage", "");
+});
+
 Template.postNew.helpers({
+  logoImageUrl: ()=> {
+    return Session.get("logoImage");;
+},
 });
 
 Template.postNew.events ({
+  'click #select_logo_btn': () => {
+      $('#myFileInput').trigger("click");
+    },
 });
 
 AutoForm.hooks({
@@ -13,6 +25,10 @@ AutoForm.hooks({
     before: {
       insert: function(doc) {
         doc.createdAt = new Date();
+        var photo = Session.get("logoImage");
+        doc.image = photo;
+        console.log(photo);
+        // console.log(doc);
         return doc;
       }
     },
