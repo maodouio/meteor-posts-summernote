@@ -1,12 +1,14 @@
 <template name="postNew">
 	<div class="container">
-	  <h2>Create post</h2>
+	  <h2>发表文章</h2>
 	  {{#autoForm collection="Posts" id="postForm" type="insert"}}
 	  <fieldset>
-	    {{> afQuickField name='title'}} 
+	    {{> afQuickField name='title'}}
+	    {{> afQuickField name='authorName'}}
+	    {{> afQuickField name='description'}}
 	    {{> afQuickField name='content' height='100'}}
 	  </fieldset>
-	  <button type="submit" class="btn btn-primary">Create</button>
-	  <a class="btn btn-link" role="button" href="{{pathFor 'postsIndex'}}">Back</a> {{/autoForm}}
+	  <button type="submit" class="btn btn-primary">创建</button>
+	  <a class="btn btn-link" role="button" href="{{pathFor 'postsIndex'}}">后退</a> {{/autoForm}}
 	</div>
 </template>
