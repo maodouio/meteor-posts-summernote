@@ -1,13 +1,13 @@
 <template name="postEdit">
   <div class="container">
-    <h2>Edit post</h2>
+    <h2>编辑</h2>
     {{#autoForm collection="Posts" doc=this id="postForm" type="update"}}
       <fieldset>
         {{> afQuickField name='title'}}
         {{> afQuickField name='content' rows=6}}
       </fieldset>
-      <button type="submit" class="btn btn-primary">Update</button>
-      <a class="btn btn-link" role="button" href="{{pathFor 'postsIndex'}}">Back</a>
+      <button type="submit" class="btn btn-primary">更新</button>
+      <a class="btn btn-link" role="button" href="{{pathFor 'postsIndex'}}">后退</a>
     {{/autoForm}}
   </div>
 </template>

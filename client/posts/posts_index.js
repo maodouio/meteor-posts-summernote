@@ -2,9 +2,6 @@ Template.postsIndex.rendered = function() {
 };
 
 Template.postsIndex.helpers({
-  sayHello: function () {
-    return "Hallo!";
-  }
 });
 
 Template.postsIndex.events ({
@@ -12,9 +9,9 @@ Template.postsIndex.events ({
     e.preventDefault();
     var item = this;
 
-    if (confirm("Are you sure?")) {
+    if (confirm("您确定？")) {
       Posts.remove(item._id);
-      console.log("Deleted!")
+      console.log("已删除")
     }
   }
 });
