@@ -32,7 +32,8 @@ Router.map(function() {
     template: 'postShow',
     path: '/posts/:_id',
     waitOn: function () {
-      return Meteor.subscribe('post', this.params._id);
+      //return Meteor.subscribe('post', this.params._id);
+      return Meteor.subscribe('postComposite', this.params._id);
     },
     data: function () {
       return Posts.findOne(this.params._id);

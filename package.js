@@ -29,6 +29,7 @@ Package.onUse(function(api) {
   api.use('twbs:bootstrap@3.3.4', ["server", "client"]);
   api.use('maodouio:meteor-image-upload@0.0.1', ["server", "client"]);
 
+  api.use('reywood:publish-composite@1.4.2', "server");
 
   // mongo and template
   // https://zh.discovermeteor.com/chapters/creating-a-meteor-package/
@@ -48,7 +49,8 @@ Package.onUse(function(api) {
   api.addFiles("client/posts/posts_index.html", "client");
   api.addFiles("client/posts/posts_index.js", "client");
 
-  api.addFiles("lib/collections.js");
+  api.addFiles('lib/collections.js', ['server', 'client']);
+  api.addFiles('lib/helper.js', ['client']);
 
   api.addFiles("server/publications.js", "server");
   api.addFiles("server/config.js", "server");
