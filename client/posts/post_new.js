@@ -3,7 +3,7 @@ Template.postNew.rendered = function() {
 };
 
 Template.postNew.onRendered(function(){
-  console.log('logoImages: ' + Session.get('logoImages'));
+  console.log('logoImage: ' + Session.get('logoImage'));
   Session.setDefault("imageFileName","未选择文件");
   Session.setDefault("logoImage", "");
 });

@@ -51,6 +51,7 @@ Package.onUse(function(api) {
   api.addFiles("lib/collections.js");
 
   api.addFiles("server/publications.js", "server");
+  api.addFiles("server/config.js", "server");
 
   api.export('Posts');
 });
