@@ -21,6 +21,43 @@
       {{/if}}
     {{/if}}
 
+    <hr>
+
+    {{#each comments}}
+      {{#with user}}
+        {{> userCommentCard user=this comment=..}}
+      {{/with}}
+    {{/each}}
+
+    {{#autoForm collection="Comment.collection" id="commentForm" type="insert"}}
+      {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}}
+      <button class="btn btn-primary" type="submit">提交</button>
+    {{/autoForm}}
+
     <a href="{{pathFor 'postsIndex'}}">Back</a>
+  </div>
+</template>
+
+<template name="userCommentCard">
+  <div class="user-img">
+    <a href="/users/{{user._id}}">
+    <!-- <img alt="image" src="{{user.profile.headimgurl}}"/> -->
+
+    </a>
+  </div>
+  <div class="comment-wrapper">
+    <div class="postmeta">
+      <!-- <a class="user_info_name" href="/users/{{user._id}}">{{user.profile.nickname}}</a>
+      &nbsp;•&nbsp; -->
+
+      <a class="user_info_name" href="/users/{{user._id}}"> {{user.emails.[0].address}}</a>
+
+      <div class="text-right">
+        <abbr class="timeago">{{momentFormNow comment.date}}</abbr>
+      </div>
+    </div>
+    <div class="comment-main">
+      <pre class="comment-text" rows="3">{{comment.body}}</pre>
+    </div>
   </div>
 </template>
