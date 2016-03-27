@@ -14,11 +14,11 @@ Template.postNew.helpers({
 },
 });
 
-Template.postNew.events ({
-  'click #select_logo_btn': () => {
-      $('#myFileInput').trigger("click");
-    },
-});
+// Template.postNew.events ({
+//   'click #select_logo_btn': () => {
+//       $('#myFileInput').trigger("click");
+//     },
+// });
 
 AutoForm.hooks({
   'postForm': {
