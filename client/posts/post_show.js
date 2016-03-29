@@ -21,7 +21,7 @@ Template.postShow.helpers({
   },
 });
 
-Template.userCommentCard.helpers({
+Template.userPostCommentCard.helpers({
   momentFormNow: function(date) {
     moment.lang('zh-cn');
     return moment(date).fromNow();
