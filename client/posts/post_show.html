@@ -27,7 +27,7 @@
 
     {{#each comments}}
       {{#with user}}
-        {{> userCommentCard user=this comment=..}}
+        {{> userPostCommentCard user=this comment=..}}
       {{/with}}
     {{/each}}
 
@@ -40,7 +40,7 @@
   </div>
 </template>
 
-<template name="userCommentCard">
+<template name="userPostCommentCard">
   <div class="user-img">
     <a href="/users/{{user._id}}">
     <!-- <img alt="image" src="{{user.profile.headimgurl}}"/> -->
