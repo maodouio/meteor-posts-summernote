@@ -9,8 +9,8 @@ Template.postNew.onRendered(function(){
 });
 
 Template.postNew.helpers({
-  logoImageUrl: ()=> {
-    return Session.get("logoImage");;
+  logoImageUrl: function() {
+    return Session.get("logoImage");
 },
 });
 
