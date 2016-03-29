@@ -1,6 +1,7 @@
 <template name="postShow">
   <div class="container">
     {{> loginButtons}}
+    {{#with post}}
     <h2 class="text-left">{{title}}</h2>
     <h4 class="text-left">{{showPrettyTimestamp createdAt}} {{authorName}}</h4>
     <p>{{{description}}}</p>
@@ -12,6 +13,7 @@
         <img src="{{photo}}">
       </div>
     </div>
+    {{/with}}
 
     {{#if hasPackage "PostLikes"}}
       {{#if hasLiked}}
