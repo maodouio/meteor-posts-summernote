@@ -20,10 +20,9 @@
             <tr>
               <td><a href="{{pathFor 'postShow'}}">{{title}}</a></td>
               <td><a href="">{{authorName}}</a></td>
-              <td><a href="">{{authorName}}</a></td>
+              <td><a href="">{{showPrettyTimestamp createdAt}}</a></td>
               <!-- <td>{{content}}</td> -->
               <!-- <td>{{showTimeAgo updatedAt}}</td> -->
-              <td>{{showPrettyTimestamp createdAt}}</td>
               <td>
                 <a class="btn btn-xs btn-default" href="{{pathFor 'postEdit'}}" role="button">编辑</a>
                 <a class="btn btn-xs btn-danger delete-post" href="#" role="button">删除</a>
