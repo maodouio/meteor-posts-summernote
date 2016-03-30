@@ -49,14 +49,14 @@ Template.postShow.events ({
       console.log(this);
       Like.collection.insert({linkedObjectId: this._id, userId: Meteor.userId(), date: new Date()});
     } else {
-      console.log("router go");
-      // window.location.href = "/userLogin?logintype=/activities/" + this._id;
+      console.log("router go userLogin");
+      window.location.href = "/userLogin?logintype=/posts/" + this._id;
     }
   }
 });
 
 AutoForm.hooks({
-  'commentForm': {
+  'postCommentForm': {
     before: {
       insert: function(doc) {
         if (Meteor.user()) {

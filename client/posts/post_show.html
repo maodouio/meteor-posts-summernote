@@ -47,7 +47,7 @@
                         {{{content}}}
                     </div>
 
-                    <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_combo2c9cd6.css">
+<!--                     <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_combo2c9cd6.css"> -->
 
                     <div class="rich_media_tool" id="js_toobar3">
 
@@ -106,16 +106,19 @@
     {{/with}}
 
     <hr>
+
+    <div class="container">
     {{#each comments}}
       {{#with user}}
         {{> userPostCommentCard user=this comment=..}}
       {{/with}}
     {{/each}}
 
-    {{#autoForm collection="Comment.collection" id="commentForm" type="insert"}}
+    {{#autoForm collection="Comment.collection" id="postCommentForm" type="insert"}}
       {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}}
       <button class="btn btn-primary" type="submit">提交</button>
     {{/autoForm}}
+    </div>
 </template>
 
 <template name="userPostCommentCard">
