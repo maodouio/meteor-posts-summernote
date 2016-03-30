@@ -1,39 +1,34 @@
 <template name="postsIndex">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>文章列表</h1>
-        <a class="btn btn-primary" href="{{pathFor 'postNew'}}" role="button">发表文章</a>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>标题</th>
-              <!-- <th>Content</th> -->
-              <!-- <th>Updated</th> -->
-              <th>作者</th>
-              <th>创建日期</th>
-              <th>操作</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each posts}}
-            <tr>
-              <td><a href="{{pathFor 'postShow'}}">{{title}}</a></td>
-              <td><a href="">{{authorName}}</a></td>
-              <td><a href="">{{showPrettyTimestamp createdAt}}</a></td>
-              <!-- <td>{{content}}</td> -->
-              <!-- <td>{{showTimeAgo updatedAt}}</td> -->
-              <td>
-                <a class="btn btn-xs btn-default" href="{{pathFor 'postEdit'}}" role="button">编辑</a>
-                <a class="btn btn-xs btn-danger delete-post" href="#" role="button">删除</a>
-                </td>
-            </tr>
-            {{else}}
-            没有帖子。
-            {{/each}}
-          </tbody>
-        </table>
-      </div>
+
+    <div class="row col-md-12">
+
+      <!-- <a class="btn btn-primary" href="{{pathFor 'postNew'}}" role="button">发表文章</a> -->
+
+      {{#each posts}}
+      <section class="post-item-wrap row" >
+<!-- style="background-image: url('{{image}}')" -->
+        <div class="article-image" style="background-image: url('{{image}}')"></div>
+
+        <div class="article-info-wrap">
+          <a href="{{pathFor 'postShow'}}">
+            <p class="post-title">{{title}}</p>
+          </a>
+          <a href="">
+            <p class="author-name">{{description}}</p>
+          </a>
+        </div>
+      </section>
+      {{else}}
+      没有帖子。
+      {{/each}}
+
+      <!-- <td>{{content}}</td> -->
+      <!-- <td>{{showTimeAgo updatedAt}}</td> -->
+      <!-- <td>{{showPrettyTimestamp createdAt}}</td> -->
+
+      <!-- <a class="btn btn-xs btn-default" href="{{pathFor 'postEdit'}}" role="button">编辑</a>
+      <a class="btn btn-xs btn-danger delete-post" href="#" role="button">删除</a> -->
     </div>
   </div>
 </template>

@@ -28,13 +28,13 @@ Package.onUse(function(api) {
   api.use('mpowaga:autoform-summernote@0.4.2', ['client']);
   api.use('twbs:bootstrap@3.3.4', ["server", "client"]);
   api.use('maodouio:meteor-image-upload@0.0.1', ["server", "client"]);
-
   api.use('reywood:publish-composite@1.4.2', "server");
 
   // mongo and template
   // https://zh.discovermeteor.com/chapters/creating-a-meteor-package/
   api.use(['minimongo@1.0.10', 'mongo-livedata@1.0.9', 'templating@1.1.4'], 'client');
 
+  api.use('fourseven:scss@3.4.1',['client']);
   // file
   // ls -l | awk '{print "api.addFiles(\""$9"\", \"client\");"}'
   api.addFiles('posts.js');
@@ -55,5 +55,6 @@ Package.onUse(function(api) {
   api.addFiles("server/publications.js", "server");
   api.addFiles("server/config.js", "server");
 
+  api.addFiles("lib/stylesheet/postList_Item.scss", "client");
   api.export('Posts');
 });
