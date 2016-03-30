@@ -1,6 +1,11 @@
-<button class="btn btn-primary" type="submit">返回</button>
 <template name="postShow">
-  <div class="container">
+<div style="background-color:black;color:white;">
+  <span> <a style="text-decoration: none;color: white;" href="{{pathFor 'postsIndex'}}"><i class="glyphicon glyphicon-chevron-left"></i> 返回</a></span>
+  {{#with post}}
+  <span style="align:middle;">{{authorName}}</span>   
+  {{/with}}
+</div>
+<div class="container">
     <!-- {{> loginButtons}} -->
     {{#with post}}
     <h2 class="text-left">{{title}}</h2>
@@ -35,10 +40,10 @@
 
     {{#autoForm collection="Comment.collection" id="commentForm" type="insert"}}
       {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}}
-      <!-- <button class="btn btn-primary" type="submit">提交</button> -->
+      <button class="btn btn-primary" type="submit">提交</button>
     {{/autoForm}}
 
-    <a href="{{pathFor 'postsIndex'}}">Back</a>
+    <!-- <a href="{{pathFor 'postsIndex'}}">Back</a> -->
   </div>
 </template>
 
