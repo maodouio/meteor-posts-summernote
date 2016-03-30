@@ -2,6 +2,9 @@
   padding: 15px 15px 10px 10px;
   overflow: hidden;
   height: 85px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
 }
@@ -14,10 +17,16 @@
   background-position: center center;
   background-repeat: no-repeat;
   margin-right: 10px;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
 }
 
 .article-info-wrap {
+-webkit-box-flex: 1;
+-webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
   flex-grow: 1;
   overflow: hidden;
   .post-title {
