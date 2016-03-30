@@ -1,79 +1,61 @@
-<template name="postShow">
+<template name="postShow0">
+    <div id="js_article" class="rich_media">  
+        <div id="js_top_ad_area" class="top_banner">
 
-  <div style="background-color:black;color:white;">
-    <span> <a style="text-decoration: none;color: white;" href="{{pathFor 'postsIndex'}}"><i class="glyphicon glyphicon-chevron-left"></i> 返回</a></span>
-  </div>
+        </div>
 
-  <div class="photocontain clearfix">
-    <div class="photo clearfix">
-      <img src="{{photo}}">
+
+        <div class="rich_media_inner">
+            <div id="page-content">
+                <div id="img-content" class="rich_media_area_primary">
+                    <h2 class="rich_media_title" id="activity-name">
+                        清华x-lab加速计划预热活动 
+                    </h2>
+                    <div class="rich_media_meta_list">
+                                                            <em id="post-date" class="rich_media_meta rich_media_meta_text">2016-03-28</em>
+
+                                                <a class="rich_media_meta rich_media_meta_link rich_media_meta_nickname" href="javascript:void(0);" id="post-user">THUxlab创业DNA基金</a>
+                        <span class="rich_media_meta rich_media_meta_text rich_media_meta_nickname">THUxlab创业DNA基金</span>
+
+                        <div id="js_profile_qrcode" class="profile_container" style="display:none;">
+                            <div class="profile_inner">
+                                <strong class="profile_nickname">THUxlab创业DNA基金</strong>
+                                <img class="profile_avatar" id="js_profile_qrcode_img" src="" alt="">
+
+                                <p class="profile_meta">
+                                <label class="profile_meta_label">微信号</label>
+                                <span class="profile_meta_value"></span>
+                                </p>
+
+                                <p class="profile_meta">
+                                <label class="profile_meta_label">功能介绍</label>
+                                <span class="profile_meta_value">清华x-lab创业DNA基金，由清华控股、启迪控股共同出资；旨在为从“0”到“1”阶段的创业学生、校友和老师提供启动资本，支持优秀人才的成长，与项目团队共同创造价值，实现共赢。</span>
+                                </p>
+                                
+                            </div>
+                            <span class="profile_arrow_wrp" id="js_profile_arrow_wrp">
+                                <i class="profile_arrow arrow_out"></i>
+                                <i class="profile_arrow arrow_in"></i>
+                            </span>
+                        </div>
+                    </div>     
+                                                            
+                    <div class="rich_media_thumb_wrp" id="media">
+    
+                           <img class="rich_media_thumb" id="js_cover" onerror="this.parentNode.removeChild(this)" data-backsrc="http://mmbiz.qpic.cn/mmbiz/gTIodnYouFsibUkFsCAr4KMubiarL3L06EtPiaIV0oYxf0JXuB4zNicwgBQj5ZG1xMnCJhEGJpcZhlFgvmFNJzzM1g/0?wx_fmt=jpeg" data-s="300,640" src="http://mmbiz.qpic.cn/mmbiz/gTIodnYouFsibUkFsCAr4KMubiarL3L06EtPiaIV0oYxf0JXuB4zNicwgBQj5ZG1xMnCJhEGJpcZhlFgvmFNJzzM1g/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5">
+                    </div>
+                </div>
+            </div>
+
+            <div id="js_pc_qr_code" class="qr_code_pc_outer" style="display: block;">
+                <div class="qr_code_pc_inner">
+                    <div class="qr_code_pc">
+                        <img id="js_pc_qr_code_img" class="qr_code_pc_img" src="/mp/qrcode?scene=10000004&amp;size=102&amp;__biz=MzI0ODE0NTc5Mw==">
+                        <p>微信扫一扫<br>关注该公众号</p>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
     </div>
-  </div>
-
-  <div class="container">
-    <!-- {{> loginButtons}} -->
-    {{#with post}}
-
-      <h2 class="text-left">{{title}}</h2>
-      <h4 class="text-left">{{showPostTimestamp createdAt}} </h4>
-      <a href="/users/{{userId}}">{{authorName}}</a>
-      <p>{{{description}}}</p>
-      <hr>
-      <p>{{{content}}}</p>
-      <span>阅读 {{pageviewCounter}}</span>
-      <span>
-        <!-- float: right; DELETED -->
-        {{#if hasPackage "PostLikes"}}
-          {{#if hasLiked}}
-            <i class="fa fa-thumbs-up dislike"  style="font-size: large; color: #E96F4B; padding-right: 15px; padding-top: 25px;">&nbsp;<span style="font-size: 14px;">{{likesCount}}</span></i>
-          {{else}}
-            <i class="fa fa-thumbs-o-up like" style="font-size: large; color: #E96F4B; padding-right: 15px; padding-top: 25px;">&nbsp;<span class="actUserLabel nm" style="font-size: 14px;">{{likesCount}}</span></i>
-          {{/if}}
-        {{/if}}
-      </span>
-      <span>
-        <a style="text-decoration: none;color: white;" href="">投诉</a>
-      </span>
-
-    {{/with}}
-
-    <hr>
-
-    {{#each comments}}
-      {{#with user}}
-        {{> userPostCommentCard user=this comment=..}}
-      {{/with}}
-    {{/each}}
-
-    {{#autoForm collection="Comment.collection" id="commentForm" type="insert"}}
-      {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}}
-      <button class="btn btn-primary" type="submit">提交</button>
-    {{/autoForm}}
-
-    <!-- <a href="{{pathFor 'postsIndex'}}">Back</a> -->
-  </div>
-</template>
-
-<template name="userPostCommentCard">
-  <div class="user-img">
-    <a href="/users/{{user._id}}">
-    <!-- <img alt="image" src="{{user.profile.headimgurl}}"/> -->
-
-    </a>
-  </div>
-  <div class="comment-wrapper">
-    <div class="postmeta">
-      <!-- <a class="user_info_name" href="/users/{{user._id}}">{{user.profile.nickname}}</a>
-      &nbsp;•&nbsp; -->
-
-      <a class="user_info_name" href="/users/{{user._id}}"> {{user.emails.[0].address}}</a>
-
-      <div class="text-right">
-        <abbr class="timeago">{{momentFormNow comment.date}}</abbr>
-      </div>
-    </div>
-    <div class="comment-main">
-      <pre class="comment-text" rows="3">{{comment.body}}</pre>
-    </div>
-  </div>
 </template>
