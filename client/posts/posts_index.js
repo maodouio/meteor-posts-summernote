@@ -21,11 +21,6 @@ Template.postsIndex.events ({
     console.log(this);
     window.location.href = "/posts/"+this._id;
   },
-
-  'click .post-item-wrap': function() {
-    Router.go('/posts/' + this._id);
-  }
-
 });
 
 // Outputs e.g. 2 hours ago
