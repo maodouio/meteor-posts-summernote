@@ -85,7 +85,7 @@ AutoForm.hooks({
 Template.postShow.onRendered(function() {
 	var share_config = {
        "share": {
-          "imgUrl": $(".postImg > img")[0].src,
+          "imgUrl": this.data.post.image,
           "desc" : this.data.post.description,
           "title" : this.data.post.title,
           "link": window.location.href,
