@@ -9,7 +9,7 @@ Template.postShow.helpers({
   },
   hasLiked: function () {
     console.log(this);
-    var up = !!Like.collection.findOne({linkedObjectId: this.post._id, userId: Meteor.userId()});
+    var up = !!Like.collection.findOne({linkedObjectId: this._id, userId: Meteor.userId()});
     if (up) {
       return true;
     } else {
@@ -17,7 +17,11 @@ Template.postShow.helpers({
     }
   },
   likesCount: function () {
-    return Like.collection.find({linkedObjectId: this.post._id}).count();
+    return Like.collection.find({linkedObjectId: this._id}).count();
+  },
+  likesCountIsZero: function () {
+    var count = Like.collection.find({linkedObjectId: this._id}).count();
+    return count == 0? true: false;
   },
 });
 
@@ -33,7 +37,7 @@ Template.postShow.events ({
   "click .dislike": function(event, template){
     console.log('disliked');
 
-    var a = Like.collection.findOne({linkedObjectId: this.post._id,userId: Meteor.userId()});
+    var a = Like.collection.findOne({linkedObjectId: this._id,userId: Meteor.userId()});
     Like.collection.remove({_id:a._id});
   },
   // 点赞
@@ -41,7 +45,8 @@ Template.postShow.events ({
     if (Meteor.user()) {
       //this.like();
       console.log('liked');
-      Like.collection.insert({linkedObjectId: this.post._id, userId: Meteor.userId(), date: new Date()});
+      console.log(this);
+      Like.collection.insert({linkedObjectId: this._id, userId: Meteor.userId(), date: new Date()});
     } else {
       console.log("router go");
       // window.location.href = "/userLogin?logintype=/activities/" + this._id;

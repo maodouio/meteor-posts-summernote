@@ -1,20 +1,19 @@
-<template name="postShow0">
+<template name="postShow">
+    {{#with post}}
     <div id="js_article" class="rich_media">  
         <div id="js_top_ad_area" class="top_banner">
-
         </div>
-
 
         <div class="rich_media_inner">
             <div id="page-content">
                 <div id="img-content" class="rich_media_area_primary">
                     <h2 class="rich_media_title" id="activity-name">
-                        清华x-lab加速计划预热活动 
+                        {{title}}
                     </h2>
                     <div class="rich_media_meta_list">
-                                                            <em id="post-date" class="rich_media_meta rich_media_meta_text">2016-03-28</em>
+                        <em id="post-date" class="rich_media_meta rich_media_meta_text">{{showPostTimestamp createdAt}}</em>
 
-                                                <a class="rich_media_meta rich_media_meta_link rich_media_meta_nickname" href="javascript:void(0);" id="post-user">THUxlab创业DNA基金</a>
+                        <a class="rich_media_meta rich_media_meta_link rich_media_meta_nickname" href="/users/{{userId}}" id="post-user">{{authorName}}</a>
                         <span class="rich_media_meta rich_media_meta_text rich_media_meta_nickname">THUxlab创业DNA基金</span>
 
                         <div id="js_profile_qrcode" class="profile_container" style="display:none;">
@@ -31,7 +30,6 @@
                                 <label class="profile_meta_label">功能介绍</label>
                                 <span class="profile_meta_value">清华x-lab创业DNA基金，由清华控股、启迪控股共同出资；旨在为从“0”到“1”阶段的创业学生、校友和老师提供启动资本，支持优秀人才的成长，与项目团队共同创造价值，实现共赢。</span>
                                 </p>
-                                
                             </div>
                             <span class="profile_arrow_wrp" id="js_profile_arrow_wrp">
                                 <i class="profile_arrow arrow_out"></i>
@@ -44,9 +42,55 @@
     
                            <img class="rich_media_thumb" id="js_cover" onerror="this.parentNode.removeChild(this)" data-backsrc="http://mmbiz.qpic.cn/mmbiz/gTIodnYouFsibUkFsCAr4KMubiarL3L06EtPiaIV0oYxf0JXuB4zNicwgBQj5ZG1xMnCJhEGJpcZhlFgvmFNJzzM1g/0?wx_fmt=jpeg" data-s="300,640" src="http://mmbiz.qpic.cn/mmbiz/gTIodnYouFsibUkFsCAr4KMubiarL3L06EtPiaIV0oYxf0JXuB4zNicwgBQj5ZG1xMnCJhEGJpcZhlFgvmFNJzzM1g/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5">
                     </div>
+
+                    <div class="rich_media_content " id="js_content">
+                        {{{content}}}
+                    </div>
+
+                    <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_combo2c9cd6.css">
+
+                    <div class="rich_media_tool" id="js_toobar3">
+
+                        <a class="media_tool_meta meta_primary" id="js_view_source" href="/posts">阅读原文</a>
+
+                        <div id="js_read_area3" class="media_tool_meta tips_global meta_primary" style="display:;">阅读 <span id="readNum3">{{pageviewCounter}}</span></div>
+
+
+                        {{#if hasPackage "PostLikes"}}
+                            {{#if hasLiked}}
+                                <span style="display:;" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
+                                    <i class="icon_praise_gray dislike" style="background-position:bottom;"></i><span class="praise_num" id="likeNum3">{{likesCount}}</span>
+                                </span>
+                            {{else}}
+                                <span style="display:;" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
+                                    <i class="icon_praise_gray like"></i><span class="praise_num" id="likeNum3">
+                                    {{#if likesCountIsZero}}
+                                        赞
+                                    {{else}}
+                                        {{likesCount}}
+                                    {{/if}}
+                                    </span>
+                                </span>
+                            {{/if}}
+                        {{/if}}
+
+                        <a id="js_report_article3" style="display:;" class="media_tool_meta tips_global meta_extra" href="javascript:void(0);">投诉</a>
+                    </div>
+                </div>
+
+                <div class="rich_media_area_primary sougou" id="sg_tj" style="display:none">
+
+                </div>
+
+                <div class="rich_media_area_extra">
+                    <div class="mpda_bottom_container" id="js_bottom_ad_area">
+
+                    </div>
+                    <div id="js_iframetest" style="display:none;"></div>
                 </div>
             </div>
 
+<!--
             <div id="js_pc_qr_code" class="qr_code_pc_outer" style="display: block;">
                 <div class="qr_code_pc_inner">
                     <div class="qr_code_pc">
@@ -55,7 +99,44 @@
                     </div>
                 </div>
             </div>
+-->
         </div>  
 
     </div>
+    {{/with}}
+
+    <hr>
+    {{#each comments}}
+      {{#with user}}
+        {{> userPostCommentCard user=this comment=..}}
+      {{/with}}
+    {{/each}}
+
+    {{#autoForm collection="Comment.collection" id="commentForm" type="insert"}}
+      {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}}
+      <button class="btn btn-primary" type="submit">提交</button>
+    {{/autoForm}}
 </template>
+
+<template name="userPostCommentCard">
+  <div class="user-img">
+    <a href="/users/{{user._id}}">
+    <!-- <img alt="image" src="{{user.profile.headimgurl}}"/> -->
+
+    </a>
+  </div>
+  <div class="comment-wrapper">
+    <div class="postmeta">
+      <a class="user_info_name" href="/users/{{user._id}}">{{user.profile.nickname}}</a>
+      &nbsp;•&nbsp;
+
+      <div class="text-right">
+        <abbr class="timeago">{{momentFormNow comment.date}}</abbr>
+      </div>
+    </div>
+    <div class="comment-main">
+      <pre class="comment-text" rows="3">{{comment.body}}</pre>
+    </div>
+  </div>
+</template>
+
