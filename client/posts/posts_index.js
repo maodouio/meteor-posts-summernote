@@ -32,6 +32,6 @@ Template.postsIndex.events ({
 //   return !date ? "" : moment(date).format("MMMM Do YYYY, h:mm:ss a")
 // });
 
-UI.registerHelper('showPrettyTimestamp', function(date) {
+UI.registerHelper('showPostTimestamp', function(date) {
   return !date ? "" : moment(date).format("YYYY-MM-DD");
 });
