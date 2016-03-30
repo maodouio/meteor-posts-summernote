@@ -1,6 +1,7 @@
 Template.postShow.rendered = function() {
   // Counter++ everytime page rendered.
-  Posts.update(this.data._id, {$inc: {pageviewCounter: 1}});
+  console.log(this.data);
+  Posts.update(this.data.post._id, {$inc: {pageviewCounter: 1}});
 };
 
 Template.postShow.helpers({
