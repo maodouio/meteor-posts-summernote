@@ -1,11 +1,15 @@
 <template name="postShow">
-    {{#with post}}
+    <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve2c9cd6.css">
+
+    <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_combo2c9cd6.css">
+
     <div id="js_article" class="rich_media">
         <div id="js_top_ad_area" class="top_banner">
         </div>
 
         <div class="rich_media_inner">
             <div id="page-content">
+                {{#with post}}
                 <div id="img-content" class="rich_media_area_primary">
                     <h2 class="rich_media_title" id="activity-name">
                         {{title}}
@@ -47,8 +51,6 @@
                         {{{content}}}
                     </div>
 
-                    <!-- <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_combo2c9cd6.css"> -->
-
                     <div class="rich_media_tool" id="js_toobar3">
 
                         <a class="media_tool_meta meta_primary" id="js_view_source" href="/posts">阅读原文</a>
@@ -60,7 +62,7 @@
                           {{#if hasPackage "PostLikes"}}
                               {{#if hasLiked}}
                                   <span style=";" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
-                                      <i class="icon_praise_gray dislike" style="background-position:bottom;"></i><span class="praise_num" id="likeNum3">{{likesCount}}</span>
+                                      <i class="icon_praise_gray praised dislike"></i><span class="praise_num" id="likeNum3">{{likesCount}}</span>
                                   </span>
                               {{else}}
                                   <span style="float: left;" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
@@ -80,44 +82,45 @@
 
                     </div>
                 </div>
+                {{/with}}
 
-                <div class="rich_media_extra" id="js_cmt_area">
-                    <div class="discuss_container" id="js_cmt_main">
-                        <div class="rich_tips with_line title_tips discuss_title_line">
-                            <span class="tips">精选留言</span>
-                        </div>
-                       <!--  <p class="tips_global tc title_bottom_tips" id="js_cmt_nofans1">关注该公众号可参与留言</p>
-                        <p class="discuss_icon_tips title_bottom_tips tr" id="js_cmt_addbtn1">
-                             <a href="#comment">写留言<img class="icon_edit" src="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_edit25ded2.png" alt=""></a>
-                        </p> -->
-                        <ul class="discuss_list" id="js_cmt_list"></ul>
-                    </div>
-                    <!-- <div class="tips_global rich_split_tips tc" id="js_cmt_nofans2" style="display: none;">
-                        关注该公众号可参与留言
-                    </div> -->
-                    <p class="discuss_icon_tips rich_split_tips tr" id="js_cmt_addbtn2">
-                        <a href="#comment">写留言<img class="icon_edit" src="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_edit25ded2.png" alt=""></a>
-                    </p>
-                    <p class="rich_split_tips tc tips_global" id="js_cmt_tips"></p>
-                    <div class="rich_tips with_line tips_global" id="js_cmt_statement">
-                        <span class="tips">以上留言由公众号筛选后显示</span>
-                    </div>
-                    <p class="rich_split_tips tc" id="js_cmt_qa">
-                        <a href="http://kf.qq.com/touch/sappfaq/150211YfyMVj150313qmMbyi.html?scene_id=kf264">
-                            了解留言功能详情
-                        </a>
-                    </p>
-                </div>
+
 
                 <div class="rich_media_area_primary sougou" id="sg_tj" style="display:none">
                 </div>
 
-                <div class="rich_media_area_extra">
-                    <div class="mpda_bottom_container" id="js_bottom_ad_area">
 
+                <div class="rich_media_area_extra">
+                    <div class="rich_media_extra" id="js_cmt_area">
+                        <div class="discuss_container" id="js_cmt_main">
+                            <div class="rich_tips with_line title_tips discuss_title_line">
+                                <span class="tips">精选留言</span>
+                            </div>
+                            <!-- <p class="tips_global tc title_bottom_tips" id="js_cmt_nofans1">关注该公众号可参与留言</p> -->
+                            <p class="discuss_icon_tips title_bottom_tips tr" id="js_cmt_addbtn1">
+                                 <a href="#comment">写留言<img class="icon_edit" src="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_edit25ded2.png" alt=""></a>
+                            </p>
+                            <ul class="discuss_list" id="js_cmt_list">
+                                {{#each comments}}
+                                  {{#with user}}
+                                    {{> userPostCommentCard user=this comment=..}}
+                                  {{/with}}
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <p class="rich_split_tips tc tips_global" id="js_cmt_tips"></p>
+                        <div class="rich_tips with_line tips_global" id="js_cmt_statement">
+                            <span class="tips">以上留言由公众号筛选后显示</span>
+                        </div>
+                        <p class="rich_split_tips tc" id="js_cmt_qa">
+                            <a href="http://kf.qq.com/touch/sappfaq/150211YfyMVj150313qmMbyi.html?scene_id=kf264">
+                                了解留言功能详情
+                            </a>
+                        </p>
                     </div>
-                    <div id="js_iframetest" style="display:none;"></div>
                 </div>
+
+                
             </div>
 
 <!--
@@ -133,36 +136,27 @@
         </div>
 
     </div>
-    {{/with}}
-
-    <hr>
 
     <div class="container">
-      <ul class="discuss_list">
-        {{#each comments}}
-          {{#with user}}
-            {{> userPostCommentCard user=this comment=..}}
-          {{/with}}
-        {{/each}}
-      </ul>
-        {{#autoForm collection="Comment.collection" id="postCommentForm" type="insert"}}
-          {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}}
-          <button class="btn btn-primary" type="submit">提交</button>
-        {{/autoForm}}
+      {{#autoForm collection="Comment.collection" id="postCommentForm" type="insert"}}
+        {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}}
+        <button class="btn btn-primary" type="submit">提交</button>
+      {{/autoForm}}
     </div>
+
 </template>
 
 <template name="userPostCommentCard">
   <li class="discuss_item" id="">
     <div class="discuss_opr">
       <span class="media_tool_meta tips_global meta_praise js_comment_praise " data-status="0" data-content-id="341905102140866562">
-        <!-- add like icon <i class="icon_praise_gray"></i> -->
-        <span class="praise_num">478</span>
+<!--         <i class="icon_praise_gray"></i>
+        <span class="praise_num">478</span> -->
       </span>
     </div>
     <div class="user_info">
       <strong class="nickname">{{user.profile.nickname}}</strong>
-      <img class="avatar" src="http://wx.qlogo.cn/mmhead/WZENY121Dqand2IeDqE3OKfcJdOjBbDMGN50PmkW31k/96"/>
+      <img class="avatar" src="{{user.profile.headimgurl}}"/>
     </div>
     <div class="discuss_message">
         <span class="discuss_status"></span>
@@ -170,23 +164,4 @@
     </div>
     <p class="discuss_extra_info">{{momentFormNow comment.date}}</p>
   </li>
-  <!-- <div class="user-img">
-    <a href="/users/{{user._id}}">
-    <img alt="image" src="{{user.profile.headimgurl}}"/>
-
-    </a>
-  </div>
-  <div class="comment-wrapper">
-    <div class="postmeta">
-      <a class="user_info_name" href="/users/{{user._id}}">{{user.profile.nickname}}</a>
-      &nbsp;•&nbsp;
-
-      <div class="text-right">
-        <abbr class="timeago">{{momentFormNow comment.date}}</abbr>
-      </div>
-    </div>
-    <div class="comment-main">
-      <pre class="comment-text" rows="3">{{comment.body}}</pre>
-    </div>
-  </div> -->
 </template>
