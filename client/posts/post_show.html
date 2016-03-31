@@ -53,28 +53,31 @@
 
                         <a class="media_tool_meta meta_primary" id="js_view_source" href="/posts">阅读原文</a>
 
-                        <div id="js_read_area3" class="media_tool_meta tips_global meta_primary" style="display:;">阅读 <span id="readNum3">{{pageviewCounter}}</span></div>
+                        <div class="post-info-wrap">
+                          <div id="js_read_area3" class="media_tool_meta tips_global meta_primary" style="float: left;margin-right: 10px;">阅读 <span id="readNum3">{{pageviewCounter}}</span></div>
 
 
-                        {{#if hasPackage "PostLikes"}}
-                            {{#if hasLiked}}
-                                <span style="display:;" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
-                                    <i class="icon_praise_gray dislike" style="background-position:bottom;"></i><span class="praise_num" id="likeNum3">{{likesCount}}</span>
-                                </span>
-                            {{else}}
-                                <span style="display:;" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
-                                    <i class="icon_praise_gray like"></i><span class="praise_num" id="likeNum3">
-                                    {{#if likesCountIsZero}}
-                                        赞
-                                    {{else}}
-                                        {{likesCount}}
-                                    {{/if}}
-                                    </span>
-                                </span>
-                            {{/if}}
-                        {{/if}}
+                          {{#if hasPackage "PostLikes"}}
+                              {{#if hasLiked}}
+                                  <span style=";" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
+                                      <i class="icon_praise_gray dislike" style="background-position:bottom;"></i><span class="praise_num" id="likeNum3">{{likesCount}}</span>
+                                  </span>
+                              {{else}}
+                                  <span style="float: left;" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
+                                      <i class="icon_praise_gray like"></i><span class="praise_num" id="likeNum3">
+                                      {{#if likesCountIsZero}}
+                                          赞
+                                      {{else}}
+                                          {{likesCount}}
+                                      {{/if}}
+                                      </span>
+                                  </span>
+                              {{/if}}
+                          {{/if}}
 
-                        <a id="js_report_article3" style="display:;" class="media_tool_meta tips_global meta_extra" href="javascript:void(0);">投诉</a>
+                          <a id="js_report_article3" style="float: right;" class="media_tool_meta tips_global meta_extra" href="javascript:void(0);">投诉</a>
+                        </div>
+
                     </div>
                 </div>
 
