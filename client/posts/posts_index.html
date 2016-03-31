@@ -5,7 +5,28 @@
 
       <!-- <a class="btn btn-primary" href="{{pathFor 'postNew'}}" role="button">发表文章</a> -->
 
-      {{#each posts}}
+      {{> postsList posts=posts}}
+
+      <!-- <td>{{content}}</td> -->
+      <!-- <td>{{showTimeAgo updatedAt}}</td> -->
+      <!-- <td>{{showPrettyTimestamp createdAt}}</td> -->
+
+      <!-- <a class="btn btn-xs btn-default" href="{{pathFor 'postEdit'}}" role="button">编辑</a>
+      <a class="btn btn-xs btn-danger delete-post" href="#" role="button">删除</a> -->
+    </div>
+  </div>
+</template>
+
+<template name="postsList">
+    {{#each posts}}
+      {{> postCard post=this}}
+    {{else}}
+      <p>目前还没有文章。</p>
+    {{/each}}  
+</template>
+
+<template name="postCard">
+  {{#with post}}
       <a class="postItem" href="/posts/{{_id}}">
         <div class="post-item-wrap row" >
         <!-- style="background-image: url('{{image}}')" -->
@@ -17,16 +38,5 @@
           </div>
         </div>
       </a>
-      {{else}}
-      没有帖子。
-      {{/each}}
-
-      <!-- <td>{{content}}</td> -->
-      <!-- <td>{{showTimeAgo updatedAt}}</td> -->
-      <!-- <td>{{showPrettyTimestamp createdAt}}</td> -->
-
-      <!-- <a class="btn btn-xs btn-default" href="{{pathFor 'postEdit'}}" role="button">编辑</a>
-      <a class="btn btn-xs btn-danger delete-post" href="#" role="button">删除</a> -->
-    </div>
-  </div>
+  {{/with}}
 </template>
