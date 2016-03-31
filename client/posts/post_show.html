@@ -1,6 +1,6 @@
 <template name="postShow">
     {{#with post}}
-    <div id="js_article" class="rich_media">  
+    <div id="js_article" class="rich_media">
         <div id="js_top_ad_area" class="top_banner">
         </div>
 
@@ -36,10 +36,10 @@
                                 <i class="profile_arrow arrow_in"></i>
                             </span>
                         </div>
-                    </div>     
-                                                            
+                    </div>
+
                     <div class="rich_media_thumb_wrp" id="media">
-    
+
                            <!-- <img class="rich_media_thumb" id="js_cover" onerror="this.parentNode.removeChild(this)" data-backsrc="http://mmbiz.qpic.cn/mmbiz/gTIodnYouFsibUkFsCAr4KMubiarL3L06EtPiaIV0oYxf0JXuB4zNicwgBQj5ZG1xMnCJhEGJpcZhlFgvmFNJzzM1g/0?wx_fmt=jpeg" data-s="300,640" src="http://mmbiz.qpic.cn/mmbiz/gTIodnYouFsibUkFsCAr4KMubiarL3L06EtPiaIV0oYxf0JXuB4zNicwgBQj5ZG1xMnCJhEGJpcZhlFgvmFNJzzM1g/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5"> -->
                     </div>
 
@@ -127,7 +127,7 @@
                 </div>
             </div>
 -->
-        </div>  
+        </div>
 
     </div>
     {{/with}}
@@ -135,12 +135,13 @@
     <hr>
 
     <div class="container">
+      <ul class="discuss_list">
         {{#each comments}}
           {{#with user}}
             {{> userPostCommentCard user=this comment=..}}
           {{/with}}
         {{/each}}
-
+      </ul>
         {{#autoForm collection="Comment.collection" id="postCommentForm" type="insert"}}
           {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}}
           <button class="btn btn-primary" type="submit">提交</button>
@@ -149,9 +150,26 @@
 </template>
 
 <template name="userPostCommentCard">
-  <div class="user-img">
+  <li class="discuss_item" id="">
+    <div class="discuss_opr">
+      <span class="media_tool_meta tips_global meta_praise js_comment_praise " data-status="0" data-content-id="341905102140866562">
+        <!-- add like icon <i class="icon_praise_gray"></i> -->
+        <span class="praise_num">478</span>
+      </span>
+    </div>
+    <div class="user_info">
+      <strong class="nickname">{{user.profile.nickname}}</strong>
+      <img class="avatar" src="http://wx.qlogo.cn/mmhead/WZENY121Dqand2IeDqE3OKfcJdOjBbDMGN50PmkW31k/96"/>
+    </div>
+    <div class="discuss_message">
+        <span class="discuss_status"></span>
+        <div class="discuss_message_content">{{comment.body}}</div>
+    </div>
+    <p class="discuss_extra_info">{{momentFormNow comment.date}}</p>
+  </li>
+  <!-- <div class="user-img">
     <a href="/users/{{user._id}}">
-    <!-- <img alt="image" src="{{user.profile.headimgurl}}"/> -->
+    <img alt="image" src="{{user.profile.headimgurl}}"/>
 
     </a>
   </div>
@@ -167,6 +185,5 @@
     <div class="comment-main">
       <pre class="comment-text" rows="3">{{comment.body}}</pre>
     </div>
-  </div>
+  </div> -->
 </template>
-
