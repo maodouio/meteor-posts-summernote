@@ -58,13 +58,13 @@ Package.onUse(function(api) {
 
   api.addFiles("lib/stylesheet/postList_Item.scss", "client");
 
-  api.addFiles("client/posts/posts_userposts.html", "client");
-  api.addFiles("client/posts/posts_userposts.js", "client");
-  api.addFiles("client/posts/posts_likes.html", "client");
-  api.addFiles("client/posts/posts_likes.js", "client");
-  api.addFiles("client/posts/posts_favorites.html", "client");
-  api.addFiles("client/posts/posts_favorites.js", "client");
-  api.addFiles("client/posts/posts_comments.html", "client");
-  api.addFiles("client/posts/posts_comments.js", "client");
+  api.addFiles("client/user/user_posts.html", "client");
+  api.addFiles("client/user/user_posts.js", "client");
+  api.addFiles("client/user/user_postslikes.html", "client");
+  api.addFiles("client/user/user_postslikes.js", "client");
+  api.addFiles("client/user/user_postsfavorites.html", "client");
+  api.addFiles("client/user/user_postsfavorites.js", "client");
+  api.addFiles("client/user/user_postscomments.html", "client");
+  api.addFiles("client/user/user_postscomments.js", "client");
   api.export('Posts');
 });

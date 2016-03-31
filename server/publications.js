@@ -71,3 +71,59 @@ Meteor.publishComposite("userPostsComposite", function(userId) {
   //  ]
  }
 });
+
+Meteor.publishComposite("userPostsCommentsComposite", function(userId) {
+  return {
+    find: function() {
+      return Comment.collection.find({userId: userId});
+    },
+    children: [
+      {
+        find: function(comment) {
+          if (typeof Posts !== "undefined") {
+            return Posts.find({_id: comment.linkedObjectId});
+          }
+        },
+        children: [
+          {
+            find: function(post) {
+              return Meteor.users.find({_id: post.userId});
+            }
+          }
+        ]
+      }
+    ]
+  }
+});
+
+Meteor.publishComposite("userPostsLikesComposite", function(userId) {
+  return {
+    find: function() {
+      return Like.collection.find({userId: userId});
+    },
+    children: [
+      {
+        find: function(like) {
+          if (typeof Posts !== "undefined") {
+            return Posts.find({_id: comment.linkedObjectId});
+          }
+        },
+        children: [
+          {
+            find: function(post) {
+              return Meteor.users.find({_id: post.userId});
+            }
+          }
+        ]
+      }
+    ]
+  }
+});
+
+Meteor.publishComposite("userPostsFavoritesComposite", function(userId) {
+ return {
+   find: function() {
+    //  return Posts.find({userId: userId}, { fields: { title: 1, description: 1 } });
+   },
+ }
+});
