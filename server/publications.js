@@ -82,7 +82,7 @@ Meteor.publishComposite("userPostsCommentsComposite", function(userId) {
       {
         find: function(comment) {
           if (typeof Posts !== "undefined") {
-            return Posts.find({_id: comment.linkedObjectId}, { fields: { title: 1, description: 1} });
+            return Posts.find({_id: comment.linkedObjectId}, { fields: { title: 1, description: 1 ,image: 1} });
           }
         },
         children: [
@@ -107,7 +107,7 @@ Meteor.publishComposite("userPostsLikesComposite", function(userId) {
       {
         find: function(like) {
           if (typeof Posts !== "undefined") {
-            return Posts.find({_id: like.linkedObjectId}, { fields: { title: 1, description: 1} });
+            return Posts.find({_id: like.linkedObjectId}, { fields: { title: 1, description: 1 ,image: 1} });
           }
         },
         children: [
