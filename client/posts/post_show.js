@@ -43,9 +43,10 @@ Template.postShow.events ({
   },
   // 点赞
   'click .like': function(e) {
+    console.log('liked');
+    
     if (Meteor.user()) {
       //this.like();
-      console.log('liked');
       console.log(this);
       Like.collection.insert({linkedObjectId: this._id, userId: Meteor.userId(), date: new Date()});
     } else {
