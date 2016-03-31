@@ -16,7 +16,7 @@ Template.postsIndex.events ({
   // },
 
 
-  "click .post-item-wrap": function(event, template){
+  "click .post-item-wrap.row": function(event, template){
     console.log('post-item-wrap clicked');
     console.log(this);
     window.location.href = "/posts/"+this._id;

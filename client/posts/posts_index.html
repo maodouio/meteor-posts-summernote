@@ -6,7 +6,7 @@
       <!-- <a class="btn btn-primary" href="{{pathFor 'postNew'}}" role="button">发表文章</a> -->
 
       {{#each posts}}
-      <section class="post-item-wrap row" >
+      <div class="post-item-wrap row" >
 <!-- style="background-image: url('{{image}}')" -->
         <div class="article-image" style="background-image: url('{{image}}')"></div>
 
@@ -14,7 +14,7 @@
             <p class="post-title">{{title}}</p>
             <p class="author-name">{{description}}</p>
         </div>
-      </section>
+      </div>
       {{else}}
       没有帖子。
       {{/each}}
