@@ -46,6 +46,7 @@ Package.onUse(function(api) {
   api.addFiles("client/posts/post_show.html", "client");
   api.addFiles("client/posts/post_show.js", "client");
   api.addFiles("client/posts/post_show.css", "client");
+  api.addFiles("client/posts/post_comment.css", "client");
   // api.addFiles("client/posts/posts.html", "client");
   api.addFiles("client/posts/posts_index.html", "client");
   api.addFiles("client/posts/posts_index.js", "client");
@@ -55,6 +56,7 @@ Package.onUse(function(api) {
 
   api.addFiles("server/publications.js", "server");
   api.addFiles("server/config.js", "server");
+  api.addFiles("server/method.js", "server");
 
   api.addFiles("lib/stylesheet/postList_Item.scss", "client");
 
