@@ -105,7 +105,7 @@ Meteor.publishComposite("userPostsLikesComposite", function(userId) {
       {
         find: function(like) {
           if (typeof Posts !== "undefined") {
-            return Posts.find({_id: comment.linkedObjectId});
+            return Posts.find({_id: like.linkedObjectId});
           }
         },
         children: [
