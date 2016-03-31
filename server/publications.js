@@ -75,7 +75,8 @@ Meteor.publishComposite("userPostsComposite", function(userId) {
 Meteor.publishComposite("userPostsCommentsComposite", function(userId) {
   return {
     find: function() {
-      return Comment.collection.find({userId: userId});
+      // return Comment.collection.find({userId: userId});
+      return Comment.collection.find({userId: userId}, { fields: { title: 1, description: 1 ,image: 1} });
     },
     children: [
       {
@@ -99,7 +100,8 @@ Meteor.publishComposite("userPostsCommentsComposite", function(userId) {
 Meteor.publishComposite("userPostsLikesComposite", function(userId) {
   return {
     find: function() {
-      return Like.collection.find({userId: userId});
+      // return Like.collection.find({userId: userId});
+      return Like.collection.find({userId: userId}, { fields: { title: 1, description: 1 ,image: 1} });
     },
     children: [
       {
