@@ -44,26 +44,18 @@ AutoForm.hooks({
         var url         = "http://" + Meteor.settings.public.subdomainName + ".maodou.io/posts/" + post._id;
 
         var content = {
-          "touser": "temp",
-          "msgtype": "news",
-          "news": {
-            "articles": [
-              {
-                "title": title,
-                "description": desc,
-                "url": url,
-                "picurl": pic
-              },
-              {
-                "title":"时间：" + content.time + "\n地点：" + content.where + "\n",
-                "description": "",
-                "url": content.url,
-                "picurl": ""
-              }
-            ]
-          }
+          title         : title,
+          pic           : pic,
+          time          : time,
+          authorName    : authorName,
+          desc          : desc,
+          url           : url
         };
 
+        var appId = Meteor.settings.public.AppId;
+        var appSecret = Meteor.settings.public.AppSecret;
+
+        Meteor.call("sendFormattedMessageToAll", appId, appSecret, content);
       }
 
       Meteor.call("getPostInfo", result, sendPostNotificationToAll);
