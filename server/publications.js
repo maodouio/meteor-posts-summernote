@@ -75,14 +75,14 @@ Meteor.publishComposite("userPostsComposite", function(userId) {
 Meteor.publishComposite("userPostsCommentsComposite", function(userId) {
   return {
     find: function() {
-      // return Comment.collection.find({userId: userId});
-      return Comment.collection.find({userId: userId}, { fields: { title: 1, description: 1 ,image: 1} });
+      return Comment.collection.find({userId: userId});
+      // return Comment.collection.find({userId: userId}, { fields: { title: 1, description: 1} });
     },
     children: [
       {
         find: function(comment) {
           if (typeof Posts !== "undefined") {
-            return Posts.find({_id: comment.linkedObjectId});
+            return Posts.find({_id: comment.linkedObjectId}, { fields: { title: 1, description: 1} });
           }
         },
         children: [
@@ -100,14 +100,14 @@ Meteor.publishComposite("userPostsCommentsComposite", function(userId) {
 Meteor.publishComposite("userPostsLikesComposite", function(userId) {
   return {
     find: function() {
-      // return Like.collection.find({userId: userId});
-      return Like.collection.find({userId: userId}, { fields: { title: 1, description: 1 ,image: 1} });
+      return Like.collection.find({userId: userId});
+      //return Like.collection.find({userId: userId}, { fields: { title: 1, description: 1} });
     },
     children: [
       {
         find: function(like) {
           if (typeof Posts !== "undefined") {
-            return Posts.find({_id: like.linkedObjectId});
+            return Posts.find({_id: like.linkedObjectId}, { fields: { title: 1, description: 1} });
           }
         },
         children: [
