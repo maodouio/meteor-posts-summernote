@@ -83,15 +83,15 @@
                         <div class="rich_tips with_line title_tips discuss_title_line">
                             <span class="tips">精选留言</span>
                         </div>
-                        <p class="tips_global tc title_bottom_tips" id="js_cmt_nofans1">关注该公众号可参与留言</p>
+                       <!--  <p class="tips_global tc title_bottom_tips" id="js_cmt_nofans1">关注该公众号可参与留言</p>
                         <p class="discuss_icon_tips title_bottom_tips tr" id="js_cmt_addbtn1">
                              <a href="#comment">写留言<img class="icon_edit" src="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_edit25ded2.png" alt=""></a>
-                        </p>
+                        </p> -->
                         <ul class="discuss_list" id="js_cmt_list"></ul>
                     </div>
-                    <div class="tips_global rich_split_tips tc" id="js_cmt_nofans2">
+                    <!-- <div class="tips_global rich_split_tips tc" id="js_cmt_nofans2" style="display: none;">
                         关注该公众号可参与留言
-                    </div>
+                    </div> -->
                     <p class="discuss_icon_tips rich_split_tips tr" id="js_cmt_addbtn2">
                         <a href="#comment">写留言<img class="icon_edit" src="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_edit25ded2.png" alt=""></a>
                     </p>
@@ -107,7 +107,6 @@
                 </div>
 
                 <div class="rich_media_area_primary sougou" id="sg_tj" style="display:none">
-
                 </div>
 
                 <div class="rich_media_area_extra">
@@ -136,16 +135,16 @@
     <hr>
 
     <div class="container">
-    {{#each comments}}
-      {{#with user}}
-        {{> userPostCommentCard user=this comment=..}}
-      {{/with}}
-    {{/each}}
+        {{#each comments}}
+          {{#with user}}
+            {{> userPostCommentCard user=this comment=..}}
+          {{/with}}
+        {{/each}}
 
-    {{#autoForm collection="Comment.collection" id="postCommentForm" type="insert"}}
-      {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}}
-      <button class="btn btn-primary" type="submit">提交</button>
-    {{/autoForm}}
+        {{#autoForm collection="Comment.collection" id="postCommentForm" type="insert"}}
+          {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}}
+          <button class="btn btn-primary" type="submit">提交</button>
+        {{/autoForm}}
     </div>
 </template>
 
