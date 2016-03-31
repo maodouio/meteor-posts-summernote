@@ -68,7 +68,8 @@ AutoForm.hooks({
 
       Meteor.call("getPostInfo", result, sendPostNotificationToAll);
 
-      Router.go('postShow', {_id: this.docId});
+      // Router.go('postShow', {_id: this.docId});
+      window.location.href = "/posts/"+this.docId;
     },
     onError: function(operation, error, template) {
       console.log(error);

@@ -6,7 +6,7 @@
       <!-- <a class="btn btn-primary" href="{{pathFor 'postNew'}}" role="button">发表文章</a> -->
 
       {{#each posts}}
-      <div class="postItem">
+      <a class="postItem" href="/posts/{{_id}}">
         <div class="post-item-wrap row" >
         <!-- style="background-image: url('{{image}}')" -->
           <div class="article-image" style="background-image: url('{{image}}')"></div>
@@ -16,7 +16,7 @@
               <p class="author-name">{{description}}</p>
           </div>
         </div>
-      </div>
+      </a>
       {{else}}
       没有帖子。
       {{/each}}
