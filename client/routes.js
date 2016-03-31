@@ -52,6 +52,32 @@ Router.map(function() {
     }
   });
 
+  // DOCUMENT SHOW COMMENT
+  // -------------------------------------------------------
+  this.route('postComment', {
+    template: 'postComment',
+    path: '/posts/:_id/comment',
+    waitOn: function () {
+      //return Meteor.subscribe('post', this.params._id);
+      return Meteor.subscribe('postComposite', this.params._id);
+    },
+    data: function () {
+      return {
+        post: Posts.findOne(this.params._id),
+        comments: function() {
+          if (typeof Comment !== "undefined" && typeof Comment.collection !== "undefined") {
+            return Comment.collection.find({}, {sort: {date: -1}});
+          }
+        },
+        likes: function() {
+          if (typeof Like !== "undefined" && typeof Like.collection !== "undefined") {
+            return Like.collection.find();
+          }
+        },
+      }
+    }
+  });
+
   // DOCUMENT EDIT
   // -------------------------------------------------------
   this.route('postEdit', {
