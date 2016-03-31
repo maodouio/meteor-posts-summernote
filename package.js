@@ -56,6 +56,7 @@ Package.onUse(function(api) {
 
   api.addFiles("server/publications.js", "server");
   api.addFiles("server/config.js", "server");
+  api.addFiles("server/method.js", "server");
 
   api.addFiles("lib/stylesheet/postList_Item.scss", "client");
 

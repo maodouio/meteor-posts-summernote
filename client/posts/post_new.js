@@ -34,6 +34,40 @@ AutoForm.hooks({
     },
     onSuccess: function (operation, result, template) {
       console.log(operation + ' successfully!');
+
+      var sendPostNotificationToAll = function(error, post) {
+        var title       = post.title;
+        var pic         = post.image;
+        var time        = post.createdAt;
+        var authorName  = post.authorName;
+        var desc        = post.description;
+        var url         = "http://" + Meteor.settings.public.subdomainName + ".maodou.io/posts/" + post._id;
+
+        var content = {
+          "touser": "temp",
+          "msgtype": "news",
+          "news": {
+            "articles": [
+              {
+                "title": title,
+                "description": desc,
+                "url": url,
+                "picurl": pic
+              },
+              {
+                "title":"时间：" + content.time + "\n地点：" + content.where + "\n",
+                "description": "",
+                "url": content.url,
+                "picurl": ""
+              }
+            ]
+          }
+        };
+
+      }
+
+      Meteor.call("getPostInfo", result, sendPostNotificationToAll);
+
       Router.go('postShow', {_id: this.docId});
     },
     onError: function(operation, error, template) {
