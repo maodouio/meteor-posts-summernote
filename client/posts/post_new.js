@@ -46,7 +46,7 @@ AutoForm.hooks({
         var content = {
           title         : title,
           pic           : pic,
-          time          : time,
+          time          : moment(time).format('YYYY-MM-DD hh:mm'),
           authorName    : authorName,
           desc          : desc,
           url           : url
