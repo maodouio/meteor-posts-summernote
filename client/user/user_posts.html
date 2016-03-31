@@ -6,22 +6,7 @@
 			</h3>
 		</div>
 
-    {{#each posts}}
-    <section class="post-item-wrap row" >
-<!-- style="background-image: url('{{image}}')" -->
-      <div class="article-image" style="background-image: url('{{image}}')"></div>
-
-      <div class="article-info-wrap">
-        <a href="{{pathFor 'postShow'}}">
-          <p class="post-title">{{title}}</p>
-        </a>
-        <a href="">
-          <p class="author-name">{{description}}</p>
-        </a>
-      </div>
-    </section>
-    {{else}}
-    没有帖子。
-    {{/each}}
+    {{> postsList posts=posts}}
+    
 	</div>
 </template>
