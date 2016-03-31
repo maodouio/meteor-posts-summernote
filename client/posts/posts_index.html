@@ -6,13 +6,15 @@
       <!-- <a class="btn btn-primary" href="{{pathFor 'postNew'}}" role="button">发表文章</a> -->
 
       {{#each posts}}
-      <div class="post-item-wrap row" >
-<!-- style="background-image: url('{{image}}')" -->
-        <div class="article-image" style="background-image: url('{{image}}')"></div>
+      <div class="postItem">
+        <div class="post-item-wrap row" >
+        <!-- style="background-image: url('{{image}}')" -->
+          <div class="article-image" style="background-image: url('{{image}}')"></div>
 
-        <div class="article-info-wrap">
-            <p class="post-title">{{title}}</p>
-            <p class="author-name">{{description}}</p>
+          <div class="article-info-wrap">
+              <p class="post-title">{{title}}</p>
+              <p class="author-name">{{description}}</p>
+          </div>
         </div>
       </div>
       {{else}}
