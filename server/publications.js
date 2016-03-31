@@ -5,7 +5,7 @@
 // DOCUMENTS INDEX
 // -------------------------------------------------------
 Meteor.publish('posts', function() {
-  return Posts.find({}, { fields: { title: 1, description: 1, image: 1 }});
+  return Posts.find({}, { fields: { title: 1, description: 1, image: 1 , createdAt: 1}});
 });
 
 // DOCUMENT SHOW
