@@ -4,9 +4,9 @@
 	line-height: 1.6
 }
 
-.rich_media_tool {
-	display: flex;
-	justify-content: space-between;
+.post-info-wrap {
+	height: 22px;
+	margin-top: 10px;
 }
 
 .rich_media {
