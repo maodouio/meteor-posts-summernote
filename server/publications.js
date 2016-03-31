@@ -55,3 +55,19 @@ Meteor.publishComposite("postComposite", function(postId) {
     ]
   }
 });
+
+
+Meteor.publishComposite("userPostsComposite", function(userId) {
+ return {
+   find: function() {
+     return Posts.find({userId: userId}, { fields: { title: 1, description: 1 } });
+   },
+  //  children: [
+  //    {
+  //      find: function() {
+  //        return Meteor.users.find({_id: userId});
+  //      }
+  //    }
+  //  ]
+ }
+});
