@@ -4,6 +4,11 @@
 	line-height: 1.6
 }
 
+.rich_media_tool {
+	display: flex;
+	justify-content: space-between;
+}
+
 .rich_media {
 	-webkit-touch-callout: none;
 	font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
