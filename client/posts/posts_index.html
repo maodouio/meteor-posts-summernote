@@ -33,10 +33,17 @@
           <div class="article-image" style="background-image: url('{{image}}')"></div>
 
           <div class="article-info-wrap">
-              <p class="post-title">{{title}}</p>
+              <p class="post-title">{{title}} 
+                <div style="float:right">
+                  <a class="btn btn-xs delete-post" href="#" role="button">删除</a>
+                </div>
+              </p>
               <p class="author-name">{{description}}</p>
           </div>
         </div>
+
+          <!-- <a class="btn btn-xs btn-default" href="{{pathFor 'postEdit'}}" role="button">编辑</a> -->
+         
       </a>
   {{/with}}
 </template>

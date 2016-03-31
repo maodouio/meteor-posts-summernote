@@ -5,16 +5,15 @@ Template.postsIndex.helpers({
 });
 
 Template.postsIndex.events ({
-  // 'click .delete-post': function(e) {
-  //   e.preventDefault();
-  //   var item = this;
-  //
-  //   if (confirm("您确定？")) {
-  //     Posts.remove(item._id);
-  //     console.log("已删除")
-  //   }
-  // },
-
+  'click .delete-post': function(e) {
+    e.preventDefault();
+    var item = this;
+  
+    if (confirm("您确定？")) {
+      Posts.remove(item._id);
+      console.log("已删除")
+    }
+  },
 
   "click .postItem": function(event, template){
     console.log(this);
