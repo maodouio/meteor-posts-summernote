@@ -6,16 +6,23 @@ Template.postsIndex.helpers({
 
 Template.postsIndex.events ({
   'click .delete-post': function(e) {
-    e.preventDefault();
+    // e.preventDefault();
     var item = this;
-  
+
     if (confirm("您确定？")) {
       Posts.remove(item._id);
       console.log("已删除")
     }
   },
 
+  'click .edit-post': function(e) {
+    // e.preventDefault();
+    console.log("/posts/"+this._id + "/edit/");
+    window.location.href = "/posts/"+this._id + "/edit/";
+  },
+
   "click .postItem": function(event, template){
+    e.preventDefault();
     console.log(this);
     window.location.href = "/posts/"+this._id;
   },
