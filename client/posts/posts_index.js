@@ -6,7 +6,8 @@ Template.postsIndex.helpers({
 
 Template.postsIndex.events ({
   'click .delete-post': function(e) {
-    // e.preventDefault();
+    e.preventDefault();
+    e.stopPropagation();
     var item = this;
 
     if (confirm("您确定？")) {
@@ -16,7 +17,8 @@ Template.postsIndex.events ({
   },
 
   'click .edit-post': function(e) {
-    // e.preventDefault();
+    e.preventDefault();
+    e.stopPropagation();
     console.log("/posts/"+this._id + "/edit/");
     window.location.href = "/posts/"+this._id + "/edit/";
   },
