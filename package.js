@@ -72,5 +72,6 @@ Package.onUse(function(api) {
   api.addFiles("client/user/user_postsfavorites.js", "client");
   api.addFiles("client/user/user_postscomments.html", "client");
   api.addFiles("client/user/user_postscomments.js", "client");
+  api.addFiles("client/posts/post_show.css", "client");
   api.export('Posts');
 });
