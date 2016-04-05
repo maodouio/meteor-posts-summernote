@@ -63,6 +63,7 @@ Router.map(function() {
     },
     data: function () {
       return {
+        // postId: this.params._id,
         post: Posts.findOne(this.params._id),
         comments: function() {
           if (typeof Comment !== "undefined" && typeof Comment.collection !== "undefined") {
