@@ -497,10 +497,10 @@ td p {
     margin-left: 1em
 }
 .btn {
-    display: block;
-    padding-left: 14px;
-    padding-right: 14px;
-    font-size: 18px;
+    /*display: block;*/
+    /*padding-left: 14px;*/
+    /*padding-right: 14px;*/
+    /*font-size: 18px;*/
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
@@ -509,8 +509,8 @@ td p {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    color: #fff;
-    line-height: 42px;
+    /*color: #fff;*/
+    /*line-height: 42px;*/
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
 }
 .btn.btn_inline {
