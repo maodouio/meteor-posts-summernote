@@ -52,6 +52,13 @@ Router.map(function() {
     }
   });
 
+  // maodou qrcode show
+  // -------------------------------------------------------
+  this.route('maodouqr', {
+    template: 'maodouQRcode',
+    path: '/maodouqr',
+  });
+
   // DOCUMENT SHOW COMMENT
   // -------------------------------------------------------
   this.route('postComment', {

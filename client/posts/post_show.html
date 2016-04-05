@@ -17,7 +17,9 @@
                         <em id="post-date" class="rich_media_meta rich_media_meta_text">{{showPostTimestamp createdAt}}</em>
 
                         <a class="rich_media_meta rich_media_meta_link rich_media_meta_nickname" href="/users/{{userId}}" id="post-user">{{authorName}}</a>
-                        <span class="rich_media_meta rich_media_meta_text rich_media_meta_nickname">THUxlab创业DNA基金</span>
+                        <!-- <span class="rich_media_meta rich_media_meta_text rich_media_meta_nickname">THUxlab创业DNA基金</span> -->
+                        <a class="rich_media_meta rich_media_meta_text rich_media_meta_nickname" href="/maodouqr">毛豆网</a>
+
 
                         <div id="js_profile_qrcode" class="profile_container" style="display:none;">
                             <div class="profile_inner">
@@ -118,8 +120,6 @@
                         </p>
                     </div>
                 </div>
-
-
             </div>
 
 <!--
@@ -143,6 +143,13 @@
       {{/autoForm}}
     </div>
 
+</template>
+
+<template name="maodouQRcode">
+  <div class="container" style="text-align:center">
+    <p>长按识别图中二维码</p>
+    <img src="../img/maodou_qr.png" alt="" />
+  </div>
 </template>
 
 <template name="userPostCommentCard">
