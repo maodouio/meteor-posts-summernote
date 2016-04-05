@@ -58,7 +58,11 @@ AutoForm.hooks({
         var appId = Meteor.settings.public.AppId;
         var appSecret = Meteor.settings.public.AppSecret;
 
+        var observerAppId = Meteor.settings.public.observer.AppId;
+        var observerAppSecret = Meteor.settings.public.observer.AppSecret;
+
         Meteor.call("sendFormattedMessageToAll", appId, appSecret, content);
+        Meteor.call("sendFormattedMessageToAll", observerAppId, observerAppSecret, content);
       }
 
       Meteor.call("getPostInfo", result, sendPostNotificationToAll);
