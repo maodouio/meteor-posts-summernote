@@ -1186,6 +1186,9 @@ td p {
     margin-bottom: 20px;
     text-align: right
 }
+.discuss_btn_wrp .btn {
+	 display: block;
+}
 .btn_discuss {
     padding-left: 1.5em;
     padding-right: 1.5em
