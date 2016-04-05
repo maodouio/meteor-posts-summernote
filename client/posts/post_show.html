@@ -1,8 +1,7 @@
 <template name="postShow">
-    <!-- <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve2c9cd6.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve2c9cd6.css">
 
-    <!-- <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_combo2c9cd6.css"> -->
-    <link rel="stylesheet" href="post_comment.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_combo2c9cd6.css">
     <div id="js_article" class="rich_media">
         <div id="js_top_ad_area" class="top_banner">
         </div>
@@ -61,12 +60,12 @@
 
                           {{#if hasPackage "PostLikes"}}
                               {{#if hasLiked}}
-                                  <span style=";" class="media_tool_meta meta_primary tips_global meta_praise dislike" id="like3">
-                                      <i class="icon_praise_gray praised" role="button"></i><span class="praise_num" id="likeNum3">{{likesCount}}</span>
+                                  <span style=";" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
+                                      <i class="icon_praise_gray praised dislike"></i><span class="praise_num" id="likeNum3">{{likesCount}}</span>
                                   </span>
                               {{else}}
-                                  <span style="float: left;" class="media_tool_meta meta_primary tips_global meta_praise like" id="like3">
-                                      <i class="icon_praise_gray" role="button"></i><span class="praise_num" id="likeNum3">
+                                  <span style="float: left;" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
+                                      <i class="icon_praise_gray like"></i><span class="praise_num" id="likeNum3">
                                       {{#if likesCountIsZero}}
                                           赞
                                       {{else}}
@@ -156,7 +155,7 @@
     </div>
     <div class="user_info">
       <strong class="nickname">{{user.profile.nickname}}</strong>
-      <a href="/users/{{user._id}}"><img class="avatar" src="{{user.profile.headimgurl}}"/></a>
+      <img class="avatar" src="{{user.profile.headimgurl}}"/>
     </div>
     <div class="discuss_message">
         <span class="discuss_status"></span>

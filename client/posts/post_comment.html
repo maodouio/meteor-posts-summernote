@@ -6,13 +6,13 @@
             <span id="log"></span>
 
             <div class="container">
-            {{#autoForm collection="Comment.collection" id="postCommentForm" type="insert"}}
+            <!-- {{#autoForm collection="Comment.collection" id="postCommentForm" type="insert"}} -->
             <div class="frm_textarea_box_wrp">
                 <span class="frm_textarea_box">
 
-                    {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}}
-                    <!--
-                    <textarea id="js_cmt_input" class="frm_textarea" placeholder="留言将由公众号筛选后显示，对所有人可见。" style="transform: translate3d(0px, 0px, 0px);"></textarea> -->
+                    <!-- {{> afQuickField type="textarea" name='body' placeholder='在这里输入您的评论' label='发表评论'}} -->
+
+                    <textarea id="js_cmt_input" class="frm_textarea" placeholder="留言将由公众号筛选后显示，对所有人可见。" style="transform: translate3d(0px, 0px, 0px);"></textarea>
 
                     <div class="emotion_tool">
                         <span class="emotion_switch" style="display:none;"></span>
@@ -40,7 +40,7 @@
             <div class="discuss_btn_wrp"><a id="js_cmt_submit" class="btn btn_primary btn_discuss btn_disabled" href="javascript:;">提交</a></div>
 
             <!-- <button class="btn btn_primary" type="submit">提交</button> -->
-            {{/autoForm}}
+            <!-- {{/autoForm}} -->
             </div>
 
             <!--
@@ -60,9 +60,6 @@
             </div> -->
         </div>
     </div>
-    <p class='test'>
-      test
-    </p>
 </template>
 
 <!--
