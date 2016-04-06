@@ -62,12 +62,12 @@
 
                           {{#if hasPackage "PostLikes"}}
                               {{#if hasLiked}}
-                                  <span style=";" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
-                                      <i class="icon_praise_gray praised dislike" role="button"></i><span class="praise_num" id="likeNum3">{{likesCount}}</span>
+                                  <span style=";" class="media_tool_meta meta_primary tips_global meta_praise dislike" id="like3">
+                                      <i class="icon_praise_gray praised" role="button"></i><span class="praise_num" id="likeNum3">{{likesCount}}</span>
                                   </span>
                               {{else}}
-                                  <span style="float: left;" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
-                                      <i class="icon_praise_gray like" role="button"></i><span class="praise_num" id="likeNum3">
+                                  <span style="float: left;" class="media_tool_meta meta_primary tips_global meta_praise like" id="like3">
+                                      <i class="icon_praise_gray" role="button"></i><span class="praise_num" id="likeNum3">
                                       {{#if likesCountIsZero}}
                                           赞
                                       {{else}}
