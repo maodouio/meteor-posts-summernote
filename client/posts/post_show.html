@@ -161,8 +161,10 @@
       </span>
     </div>
     <div class="user_info">
-      <strong class="nickname">{{user.profile.nickname}}</strong>
-      <img class="avatar" src="{{user.profile.headimgurl}}"/>
+      <a href="/users/{{user._id}}">
+        <strong class="nickname">{{user.profile.nickname}}</strong>
+        <img class="avatar" src="{{user.profile.headimgurl}}"/>
+      </a>
     </div>
     <div class="discuss_message">
         <span class="discuss_status"></span>
