@@ -4,6 +4,8 @@
     {{#autoForm collection="Posts" doc=this id="postForm" type="update"}}
       <fieldset>
         {{> afQuickField name='title'}}
+        {{> afQuickField name='authorName'}}
+        {{> afQuickField name='description'}}
         {{> afQuickField name='content' rows=6}}
       </fieldset>
       <button type="submit" class="btn btn-primary">更新</button>

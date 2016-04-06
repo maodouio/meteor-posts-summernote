@@ -2541,8 +2541,6 @@ td p {
 	margin-left: 10px;
 	margin-top:-3px
 }
-
-/*--------------Post Content Page------------*/
 .tn-Powered-by-XIUMI {
  margin-top: 0!important;
  padding-right: 0!important;
@@ -2550,4 +2548,7 @@ td p {
 }
 .tn-Powered-by-XIUMI span {
    line-height: 1.6!important
+}
+h2 {
+    margin-top: 0px
 }
