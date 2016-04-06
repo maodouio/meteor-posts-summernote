@@ -44,7 +44,7 @@ Template.postShow.events ({
   // 点赞
   'click .like': function(e) {
     console.log('liked');
-    
+
     if (Meteor.user()) {
       //this.like();
       console.log(this);
@@ -53,7 +53,19 @@ Template.postShow.events ({
       console.log("router go userLogin");
       window.location.href = "/userLogin?logintype=/posts/" + this._id;
     }
-  }
+  },
+    //写留言
+    'click #write_comment': function(){
+      if (Meteor.user()) {
+        Router.go("/posts/"+this.post._id+"/comment");
+        } else {
+          if (confirm("请您登录后再提交评论!")) {
+            var post = Posts.findOne();
+            window.location.href = "/userLogin?logintype=/posts/" + this.post._id;
+            console.log("跳转成功!");
+        }
+      }
+    }
 });
 
 

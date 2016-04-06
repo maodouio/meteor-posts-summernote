@@ -99,7 +99,7 @@
                             </div>
                             <!-- <p class="tips_global tc title_bottom_tips" id="js_cmt_nofans1">关注该公众号可参与留言</p> -->
                             <p class="discuss_icon_tips title_bottom_tips tr" id="js_cmt_addbtn1">
-                                 <a href="/posts/{{post._id}}/comment">写留言<img class="icon_edit" src="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_edit25ded2.png" alt=""></a>
+                                 <span id='write_comment'>写留言<img class="icon_edit" src="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_edit25ded2.png" alt=""></span>
                             </p>
                             <ul class="discuss_list" id="js_cmt_list">
                                 {{#each comments}}
@@ -148,7 +148,7 @@
 <template name="maodouQRcode">
   <div class="container" style="text-align:center">
     <p>长按识别图中二维码</p>
-    <img style="max-width=60%"src="../img/maodou_qr.png" alt="" />
+    <img src="../img/maodou_qr.png" alt="" />
   </div>
 </template>
 
