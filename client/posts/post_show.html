@@ -63,11 +63,11 @@
                           {{#if hasPackage "PostLikes"}}
                               {{#if hasLiked}}
                                   <span style=";" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
-                                      <i class="icon_praise_gray praised dislike"></i><span class="praise_num" id="likeNum3">{{likesCount}}</span>
+                                      <i class="icon_praise_gray praised dislike" role="button"></i><span class="praise_num" id="likeNum3">{{likesCount}}</span>
                                   </span>
                               {{else}}
                                   <span style="float: left;" class="media_tool_meta meta_primary tips_global meta_praise " id="like3">
-                                      <i class="icon_praise_gray like"></i><span class="praise_num" id="likeNum3">
+                                      <i class="icon_praise_gray like" role="button"></i><span class="praise_num" id="likeNum3">
                                       {{#if likesCountIsZero}}
                                           赞
                                       {{else}}
@@ -99,7 +99,7 @@
                             </div>
                             <!-- <p class="tips_global tc title_bottom_tips" id="js_cmt_nofans1">关注该公众号可参与留言</p> -->
                             <p class="discuss_icon_tips title_bottom_tips tr" id="js_cmt_addbtn1">
-                                 <span id='write_comment'>写留言<img class="icon_edit" src="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_edit25ded2.png" alt=""></span>
+                                 <span id='write_comment' role="button">写留言<img class="icon_edit" src="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_edit25ded2.png" alt=""></span>
                             </p>
                             <ul class="discuss_list" id="js_cmt_list">
                                 {{#each comments}}
