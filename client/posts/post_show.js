@@ -51,7 +51,7 @@ Template.postShow.events ({
       Like.collection.insert({linkedObjectId: this._id, userId: Meteor.userId(), date: new Date()});
     } else {
       console.log("router go userLogin");
-      window.location.href = "/userLogin?logintype=/posts/" + this._id;
+      window.location.href = "/userLogin?logintype=/posts/" + this._id + "#like3";
     }
   },
     //写留言
@@ -61,7 +61,7 @@ Template.postShow.events ({
         } else {
           if (confirm("请您登录后再提交评论!")) {
             var post = Posts.findOne();
-            window.location.href = "/userLogin?logintype=/posts/" + this.post._id;
+            window.location.href = "/userLogin?logintype=/posts/" + this.post._id + "/comment";
             console.log("跳转成功!");
         }
       }
