@@ -24,7 +24,7 @@ Template.postsIndex.events ({
   },
 
   "click .postItem": function(event, template){
-    e.preventDefault();
+    event.preventDefault();
     console.log(this);
     window.location.href = "/posts/"+this._id;
   },
