@@ -35,6 +35,7 @@ Package.onUse(function(api) {
   api.use(['minimongo@1.0.10', 'mongo-livedata@1.0.9', 'templating@1.1.4'], 'client');
 
   api.use('fourseven:scss@3.4.1',['client']);
+  api.use('peppelg:bootstrap-3-modal@1.0.4',['client']);
   // file
   // ls -l | awk '{print "api.addFiles(\""$9"\", \"client\");"}'
   api.addFiles('posts.js');

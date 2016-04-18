@@ -34,15 +34,16 @@ Template.userPostCommentCard.helpers({
 });
 
 Template.postShow.events ({
+
   // 取消点赞
-  "click .dislike": function(event, template){
+  "click .dislove": function(event, template){
     console.log('disliked');
 
     var a = Like.collection.findOne({linkedObjectId: this._id,userId: Meteor.userId()});
     Like.collection.remove({_id:a._id});
   },
   // 点赞
-  'click .like': function(e) {
+  'click .love': function(e) {
     console.log('liked');
 
     if (Meteor.user()) {
@@ -55,9 +56,11 @@ Template.postShow.events ({
     }
   },
     //写留言
-    'click #write_comment': function(){
+    'click #comment-icon': function(){
       if (Meteor.user()) {
-        Router.go("/posts/"+this.post._id+"/comment");
+        var userId = Meteor.userId();
+      	Modal.show("commentModal",this);
+        console.log(userId);
         } else {
           if (confirm("请您登录后再提交评论!")) {
             var post = Posts.findOne();
@@ -131,3 +134,27 @@ Template.postShow.onRendered(function() {
     });
   });
 });
+
+Template.commentModal.events({
+  "click #comment-btn": function(event, template){
+    event.preventDefault();
+    if (Meteor.user()) {
+      // console.log("activity :", activity);
+      console.log("------------------");
+      console.log(this);
+      var comment_input = $('#userCmnt').val();
+      Comment.collection.insert({
+        linkedObjectId: this._id,
+        body: comment_input
+      })
+      // Router.go("/posts/"+this._id);
+      Modal.hide();
+      } else {
+        if (confirm("请您登录后再提交评论!")) {
+          var post = Posts.findOne();
+          window.location.href = "/userLogin?logintype=/posts/" + this._id;
+          console.log("跳转成功!");
+      }
+    }
+  },
+})
