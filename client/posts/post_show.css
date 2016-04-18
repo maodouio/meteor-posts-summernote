@@ -2744,13 +2744,25 @@ fieldset{
 
 
 /*---------文章页面底部----------*/
-.rich_media_tool {
+.rich_media_tool{
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
   display:flex;
-  justify-content: space-between;
+  -webkit-box-pack:justify;
+  -webkit-justify-content:space-between;
+  -ms-flex-pack:justify;
+  justify-content:space-between
 }
-.comment-btn-container {
-  display: flex;
-  justify-content: flex-end;
+.comment-btn-container{
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:end;
+  -webkit-justify-content:flex-end;
+  -ms-flex-pack:end;
+  justify-content:flex-end
 }
 .comment-icon {
   margin: 12px;
