@@ -38,9 +38,8 @@ AutoForm.hooks({
       var sendPostNotificationToAll = function(error, post) {
         var title       = post.title;
         var pic         = post.image;
-            pic         = pic.substring(0, pic.length-10) + "w/640/h/420"
+            pic         += "?imageView2/2/w/640";
             console.log(pic);
-
         var time        = post.createdAt;
         var authorName  = post.authorName;
         var desc        = post.description;
