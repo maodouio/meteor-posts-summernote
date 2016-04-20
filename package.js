@@ -27,7 +27,7 @@ Package.onUse(function(api) {
   api.use('matb33:collection-hooks@0.8.0', ["server", "client"]);
   api.use('mpowaga:autoform-summernote@0.4.2', ['client']);
   api.use('twbs:bootstrap@3.3.4', ["server", "client"]);
-  api.use('maodouio:meteor-image-upload@0.0.1', ["server", "client"]);
+  api.use('maodouio:meteor-image-upload@0.0.4', ["server", "client"]);
   api.use('reywood:publish-composite@1.4.2', "server");
 
   // mongo and template
