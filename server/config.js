@@ -1,6 +1,6 @@
 Maodouio.imageUpload.config({
-  ACCESS_KEY: "aWYiHEpzcKB7DuRlmEwB9IhreGDj8LoaBB-W5UoZ",
-  SECRET_KEY: "xvGeaTI_4R5QhP6YyO0Qi3SXuGl34ur3rhPVH8y-",
-  BUCKET_NAME: "klbj-test",
-  DOMAIN_NAME: "http://7xpwy1.com1.z0.glb.clouddn.com/"
+  ACCESS_KEY: Meteor.settings.private.ACCESS_KEY,
+  SECRET_KEY: Meteor.settings.private.SECRET_KEY,
+  BUCKET_NAME: Meteor.settings.private.BUCKET_NAME,
+  DOMAIN_NAME: Meteor.settings.private.DOMAIN_NAME
 });
