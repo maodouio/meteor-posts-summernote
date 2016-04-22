@@ -6,7 +6,7 @@ html {
 body {
     -webkit-touch-callout: none;
     font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
-    background-color: #f3f3f3;
+    background-color: #fff;
     line-height: inherit
 }
 body.rich_media_empty_extra {
