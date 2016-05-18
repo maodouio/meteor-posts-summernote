@@ -101,8 +101,8 @@ Template.postShow.onRendered(function() {
 
   // 根据不同情况传递不同的地址获取 signature
   Meteor.call("signature", url, function(error, result) {
-    console.log(result.signature);
-    Meteor.call("printLog", result.signature);
+    // console.log(result.signature);
+    // Meteor.call("printLog", result.signature);
 
     wx.config({
       debug: false,
